@@ -18,6 +18,19 @@ public class Calculatortest {
         assertNotEquals("Finding multiplication of two number for False Positive", 80, calculator.multiplication(4,10), DELTA);
     }
 
+    @Test
+    public void cuberootTruePositive(){
+        assertEquals("Finding cube root for True Positive", 16, calculator.square(4), DELTA);
+        assertEquals("Finding cube root for True Positive", 1, calculator.square(1), DELTA);
+    }
+
+    @Test
+    public void cuberootFalsePositive(){
+        assertNotEquals("Finding cube root for False Positive", 10, calculator.square(3), DELTA);
+        assertNotEquals("Finding cube root for False Positive", 20, calculator.square(4), DELTA);
+
+    }
+
 
 
 }
