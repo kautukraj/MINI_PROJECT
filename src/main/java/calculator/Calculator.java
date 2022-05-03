@@ -37,6 +37,15 @@ public class Calculator {
                     System.out.println("\n");
 
                     break;
+                case 2:
+                    // find cube root
+                    System.out.print("Enter a number : ");
+                    number1 = scanner.nextDouble();
+                    System.out.println("Cube root of "+number1+" is : " + calculator.cuberoot(number1));
+                    System.out.println("\n");
+
+
+                    break;
                 default:
                     System.out.println("Exiting....");
                     return;
@@ -49,6 +58,13 @@ public class Calculator {
         logger.info("[MULTIPLICATION - " + number1 + " AND " + number2);
         double result = number1 * number2;
         logger.info("[RESULT - MULTIPLICATION] - " + result);
+        return result;
+    }
+
+    public double cuberoot(double number1) {
+        logger.info("[CUBE ROOT] - " + number1);
+        double result = Math.cbrt(number1);
+        logger.info("[RESULT - CUBE ROOT] - " + result);
         return result;
     }
 
