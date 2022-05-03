@@ -53,6 +53,16 @@ public class Calculator {
                     System.out.println("\n");
 
                     break;
+                case 4:
+                    // do Subtraction
+                    System.out.print("Enter the first number : ");
+                    number1 = scanner.nextDouble();
+                    System.out.print("Enter the second number : ");
+                    number2 = scanner.nextDouble();
+                    System.out.println("Subtraction of "+number2+" from "+number1+" is : " + calculator.sub(number1,number2));
+                    System.out.println("\n");
+
+                    break;
                 default:
                     System.out.println("Exiting....");
                     return;
@@ -79,6 +89,13 @@ public class Calculator {
         logger.info("[SQUARE] - " + number1);
         double result = number1 * number1;
         logger.info("[RESULT - SQUARE] - " + result);
+        return result;
+    }
+
+    public double sub(double number1, double number2) {
+        logger.info("[SUBTRACTION - " + number2 + " FROM " + number1);
+        double result = number1 - number2;
+        logger.info("[RESULT - SUBTRACTION] - " + result);
         return result;
     }
 
