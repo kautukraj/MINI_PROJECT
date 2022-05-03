@@ -10,8 +10,8 @@ pipeline {
             steps {
                 // Get code from a GitHub repository
                 // Make sure to add your own git url and credentialsId
-				git url: 'https://github.com/inspiringrai/MINI_PROJECT.git',
-				branch: 'master',
+		git url: 'https://github.com/inspiringrai/MINI_PROJECT.git',
+		branch: 'master',
                 credentialsId: 'GitCredential'
             }
         }
