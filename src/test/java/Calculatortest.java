@@ -45,5 +45,18 @@ public class Calculatortest {
     }
 
 
+    @Test
+    public void subTruePositive(){
+        assertEquals("Finding subtraction of two number for True Positive", 2, calculator.sub(5,3), DELTA);
+        assertEquals("Finding subtraction of two number for True Positive", -2, calculator.sub(6,8), DELTA);
+    }
+
+    @Test
+    public void subFalsePositive(){
+        assertNotEquals("Finding subtraction of two number for False Positive", 3, calculator.sub(5,8), DELTA);
+        assertNotEquals("Finding subtraction of two number for False Positive", -1, calculator.sub(5,4), DELTA);
+    }
+
+
 
 }
