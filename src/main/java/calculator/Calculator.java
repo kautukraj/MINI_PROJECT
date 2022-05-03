@@ -44,6 +44,13 @@ public class Calculator {
                     System.out.println("Cube root of "+number1+" is : " + calculator.cuberoot(number1));
                     System.out.println("\n");
 
+                    break;
+                case 3:
+                    // find square
+                    System.out.print("Enter a number : ");
+                    number1 = scanner.nextDouble();
+                    System.out.println("Square of "+number1+" is : " + calculator.square(number1));
+                    System.out.println("\n");
 
                     break;
                 default:
@@ -65,6 +72,13 @@ public class Calculator {
         logger.info("[CUBE ROOT] - " + number1);
         double result = Math.cbrt(number1);
         logger.info("[RESULT - CUBE ROOT] - " + result);
+        return result;
+    }
+
+    public double square(double number1) {
+        logger.info("[SQUARE] - " + number1);
+        double result = number1 * number1;
+        logger.info("[RESULT - SQUARE] - " + result);
         return result;
     }
 
