@@ -19,15 +19,28 @@ public class Calculatortest {
     }
 
     @Test
+    public void squareTruePositive(){
+        assertEquals("Finding sqaure for True Positive", 16, calculator.square(4), DELTA);
+        assertEquals("Finding sqaure for True Positive", 1, calculator.square(1), DELTA);
+    }
+
+    @Test
+    public void squareFalsePositive(){
+        assertNotEquals("Finding square for False Positive", 10, calculator.square(3), DELTA);
+        assertNotEquals("Finding square for False Positive", 20, calculator.square(4), DELTA);
+
+    }
+
+    @Test
     public void cuberootTruePositive(){
-        assertEquals("Finding cube root for True Positive", 16, calculator.square(4), DELTA);
-        assertEquals("Finding cube root for True Positive", 1, calculator.square(1), DELTA);
+        assertEquals("Finding cuberoot for True Positive", 5, calculator.cuberoot(125), DELTA);
+        assertEquals("Finding cuberoot for True Positive", -5, calculator.cuberoot(-125), DELTA);
     }
 
     @Test
     public void cuberootFalsePositive(){
-        assertNotEquals("Finding cube root for False Positive", 10, calculator.square(3), DELTA);
-        assertNotEquals("Finding cube root for False Positive", 20, calculator.square(4), DELTA);
+        assertNotEquals("Finding cuberoot for False Positive", 11, calculator.cuberoot(121), DELTA);
+        assertNotEquals("Finding cuberoot for False Positive", 3, calculator.cuberoot(8), DELTA);
 
     }
 
