@@ -23,19 +23,32 @@ pipeline {
         }
         stage('Build Docker Images') {
             steps {
-                sh 'docker build -t inspiringrai/calcproj:latest .'
+                sh 'docker build -t kautukraj/docker-push .'
             }
         }
-        stage('Publish Docker Images') {
+        
+            stage('Publish Docker Images') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          sh 'docker push kautukraj/docker-push:latest'
+        }
+      }
+    }
+        
+        
+        
+        /*stage('Publish Docker Images') {
             steps {
-                withDockerRegistry([ credentialsId: "dockerid", url: "" ]) {
-                    sh 'docker push inspiringrai/calcproj:latest'
+                withDockerRegistry([ credentialsId: "dockerHub", url: "https://registry.hub.docker.com" ]) {
+                    sh 'docker push kautukraj/docker-push'
                 }
             }
-        }
+        }*/
+        
         stage('Clean Docker Images') {
             steps {
-                sh 'docker rmi -f inspiringrai/calcproj:latest'
+                sh 'docker rmi -f kautukraj/docker-push'
             }
         }
         stage('Deploy and Run Image'){
