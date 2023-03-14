@@ -11,4 +11,4 @@
       shell: docker pull kautukraj/docker-push
 
     - name: running container
-      shell: docker run -it -d kautukraj/docker-push /bin/bash
+      shell: docker run -it -d kautukraj/docker-push 
